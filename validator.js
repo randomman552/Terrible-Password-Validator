@@ -10,19 +10,20 @@ function validate() {
 
     // Check for any symbols
     if (password.match(/[!"£$%^&*()\-_=+\[{\]};:'@#~|\\?/]/)) {
-        showMessage("Password cannot contain any symbols!", "Validation Failed!");
+        showMessage("Password cannot contain special characters!", "Validation Failed!");
+        return;
+    }
+
+
+    // Check for capital letters
+    if (password.match(/[A-Z]/)) {
+        showMessage("Password cannot contain uppercase letters!", "Validation Failed!");
         return;
     }
 
     // Check if password contains any numbers
     if (password.match(/[0-9]/)) {
         showMessage("Password cannot contain any numbers!", "Validation Failed!");
-        return;
-    }
-
-    // Check for capital letters
-    if (password.match(/[A-Z]/)) {
-        showMessage("Password cannot contain capital letters!", "Validation Failed!");
         return;
     }
 
@@ -34,11 +35,11 @@ function validate() {
 
     // Check for any letters at all
     if (password.match(/[a-z]/)) {
-        showMessage("Password cannot contain letters!", "Validation Failed!");
+        showMessage("Password cannot contain lowercase letters!", "Validation Failed!");
         return;
     }
 
-    // Only if there is nothing left in the box do we show success
+    // Now there's nothing left
     showMessage("Password field is required!", "Validation Failed!");
 }
 
