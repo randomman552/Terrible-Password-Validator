@@ -2,15 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Password Validation</title>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!-- My code -->
     <script src="validator.js"></script>
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <form action="javascript:validate()">
-        <label>
-            <input id="password" type="password">
-        </label>
-        <input type="submit" value="Validate">
+    <form class="row g-3 container-sm" action="javascript:validate()">
+        <div class="mb-3">
+            <h1>Password Validator</h1>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input class="form-control form-control-lg" id="password" type="password">
+        </div>
+        <div class="mb-3">
+            <label for="verifyPassword" class="form-label">Confirm Password:</label>
+            <input class="form-control form-control-lg" id="verifyPassword" type="password">
+        </div>
+        <input class="btn btn-primary" type="submit" value="Validate">
     </form>
+
+    <!-- Bootstrap model Modal -->
+    <div class="modal fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">Now this is a title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="clear()"></button>
+                </div>
+                <div class="modal-body" id="myModalBody">
+                    You shouldn't see this text...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="clear()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
