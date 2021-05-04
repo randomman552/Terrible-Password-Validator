@@ -9,7 +9,7 @@ function validate() {
     }
 
     // Check for any symbols
-    if (password.match(/[!"£$%^&*()\-_=+\[{\]};:'@#~|\\?/]/)) {
+    if (password.match(/[!"£$%^&*()\-_=+\[{\]};:'@#~|\\?/,<.>]/)) {
         showMessage("Password cannot contain special characters!", "Validation Failed!");
         return;
     }
