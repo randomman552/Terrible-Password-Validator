@@ -39,7 +39,7 @@ function validate() {
     }
 
     // Only if there is nothing left in the box do we show success
-    showMessage("Password validated!", "Validation Successful!");
+    showMessage("Password field is required!", "Validation Failed!");
 }
 
 function clear() {
