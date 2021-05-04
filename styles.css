@@ -5,3 +5,18 @@ body {
     height: 100vh;
     text-align: center;
 }
+
+#github-link {
+    position: fixed;
+    right: 0.5vw;
+    bottom: 0.5vh;
+    width: 60px;
+    height: 60px;
+    background-image: url("github-logo.png");
+    background-size: 100% 100%;
+    transition: 250ms;
+}
+
+#github-link:hover {
+    opacity: 50%;
+}
